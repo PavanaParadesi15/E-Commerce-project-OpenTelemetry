@@ -32,7 +32,20 @@ sudo apt install cloud-guest-utils
 sudo growpart /dev/xvda 1
 sudo resize2fs /dev/xvda1                // to resize the file system       
 ```  
+## Allow Inbound access to EC2 instance
+* Allow port 8080 on EC2 instance security group. By default it is blocked. 
 
+Once the containers are running, we can access the application using 
+ec2instance-publicip:8080 
+
+![image](https://github.com/user-attachments/assets/4a9866ba-5882-407e-abfc-22db54c44047)
+
+
+# Docker Lifecycle.
+* As a Devops Engineer we containerize the microservices. Containerization is done in 3 stages
+1. Setting up Docker file
+2. Build Docker Image
+3. Run Container
 
 
 
