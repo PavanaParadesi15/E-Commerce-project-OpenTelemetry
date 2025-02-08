@@ -12,10 +12,10 @@ This is a E-commerce open source project which is microservices based applicatio
 
 Reverse proxies are used in real-time e-commerce projects to:
 
-    1. Improve performance by caching frequently requested resources
-    2. Enhance security by hiding origin servers and blocking malicious traffic
-    3. Increase scalability by distributing traffic across multiple servers
-    4. Enable SSL termination and offloading to reduce computational overhead
+1. Improve performance by caching frequently requested resources
+2. Enhance security by hiding origin servers and blocking malicious traffic
+3. Increase scalability by distributing traffic across multiple servers
+4. Enable SSL termination and offloading to reduce computational overhead
 
 In this project the reverse proxy used is 'Envoy' , from the reverse proxy requests goes to Front-end, which is UI, from the front-end we can navigate to different pages/micro services. 
 
@@ -26,8 +26,10 @@ In this project the reverse proxy used is 'Envoy' , from the reverse proxy reque
 This demo application is developed in multiple programming languages like Java script, python, Go, .Net, Kotlin, PHP, Ruby 
 
 
+![image](https://github.com/user-attachments/assets/9cbb8cc6-7197-44da-9049-b78147424254)
 
 
+![image](https://github.com/user-attachments/assets/897f78e4-6e1e-44d1-86a5-3b3f18275041)
 
 
 
