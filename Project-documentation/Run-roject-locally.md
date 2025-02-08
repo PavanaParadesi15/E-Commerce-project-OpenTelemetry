@@ -47,6 +47,8 @@ ec2instance-publicip:8080
 2. Build Docker Image
 3. Run Container
 
+* Build docker images using this command --- docker build
+* Run docker containers      --- docker run
 
 
 
