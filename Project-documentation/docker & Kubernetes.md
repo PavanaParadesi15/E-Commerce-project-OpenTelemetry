@@ -50,7 +50,13 @@ Kubernetes automatically scales containers up or down based on demand. If a cont
 * It address critical problem of "Service Discovery"
 * It comes with clustering, supports high availability, supports load balancing
 
-
+# Managed K8S cluster - AWS EKS & its Advantages - Elastic Kubernetes Service.
+* Upgrades of the cluster is done by AWS, its managed.
+* AWS manages Control plane and Data plane which are part of K8s Architecture.
+* Control plane - has k8s primary components 
+* Data plane - is where the application/micro services pods (or) containers are running. 
+* Scaling up and down is easier and done automatically based on the load 
+* We get the K8s UI, we can manage nodes and pods from here.
 
 
 
