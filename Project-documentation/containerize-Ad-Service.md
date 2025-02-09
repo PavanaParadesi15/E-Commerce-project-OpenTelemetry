@@ -29,7 +29,7 @@ export FEATURE_FLAG_GRPC_SERVICE_ADDR=featureflagservice:50053
 ./build/install/opentelemetry-demo-ad/bin/Ad              // within the bin dir, executable and jar file is present
 ```
 
-
+# Containerize the Java microservice using Docker
 # Build the service the Docker way
 ## Create Docker file
 I built multi stage docker file using distroless image
