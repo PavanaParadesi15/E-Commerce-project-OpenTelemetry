@@ -1,4 +1,5 @@
 Modules are the re-usable code. 
+- These are the list of resources I would be creating inside VPC and EKS Cluster
 
 # Create VPC modules
 - In this module, I am creating VPC, Public and private subnet. 
