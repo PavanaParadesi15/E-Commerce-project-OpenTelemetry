@@ -127,7 +127,19 @@ sudo apt-get install terraform
 terraform --version
 ```
 
-
+# Install AWS CLI
+```
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+sudo apt install unzip -y
+unzip awscliv2.zip
+sudo ./aws/install
+aws --version
+```
+## Configure AWS
+```
+aws configure
+```
+provide access key and secret access key
 
 
 
