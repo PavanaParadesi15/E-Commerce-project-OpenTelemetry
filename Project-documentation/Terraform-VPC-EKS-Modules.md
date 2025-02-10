@@ -11,3 +11,17 @@ Modules are the re-usable code.
 - Also Route tables (RT) are created - RT is connected to IGW and associated with public subnet .  
 - RT is connected with NAT Gateway and associated with private subnet
 
+# Create EKS module
+
+- For EKS cluster, we need 2 IAM roles , one for cluster (control plane) and one for nodes (data plane)
+
+**For Control plane**
+- Create IAM role for cluster
+- Create and Associate policy to this IAM role with necessary permissions
+- Create EKS Cluster. Control plane is created. 
+
+**For Data Plane** 
+- Create IAM role for nodes
+- Create policy and attach it to the IAM role for the nodes
+- Create node group and attach it to the EKS Cluster
+
