@@ -28,9 +28,13 @@ To overcome these challenges, Terraform provides remote state management using a
 
 ## **Managing Terraform Statefile using S3 and DynamoDB**
 
-### **1. Create an S3 Bucket for State Storage** - Remote Backend
+### **1. Create an S3 Bucket for State file Storage** - Remote Backend
+- creates a terraform file called 'backend.tf' to create the S3 backend
+- This is the centralized state file stored in S3  , which serves as a terraform memory
+- This terraform file with backend configuration can also be pushed to git repo, so anyone cloning that repo will also clone this backend file and terraform understands 'state file' is stored in remote S3 bucket, and checks it before performing any action on the other AWS resources.
 - Ensure the bucket is in a region close to your infrastructure for better performance.
 - Enable versioning to retain state history and rollback when needed.
+- We can apply policy to this S3 bucket to  restrict its access to everybody and allow access to necessary persons.
 
 ### **2. Create a DynamoDB Table for State Locking**
 - Define a table with a primary key (`LockID`).
