@@ -25,6 +25,35 @@ kubectl config use-context <context-name>      // kubectl connects to mentioned 
 ```
 
 ## How to update KubeConfig with EKS Cluster Information.               
+- This is the command to update kube config with the EKS cluster details
+```
+aws eks update-kubeconfig --region ap-south-1 --name my-eks-cluster              
+```
+This is the output it gives after the update
+```
+Added new context arn:aws:eks:ap-south-1:831926586509:cluster/my-eks-cluster to /home/ubuntu/.kube/config
+```
+
+- After updating kube config, If we want to check the eks cluster details, we can give this command
+```
+kubectl config view            // gives all the details of the EKS cluster
+kubectl config current-context        // gives the current context , i.e, context of the current EKS cluster and its region
+```
+
+```
+kubectl get nodes              
+
+NAME                                       STATUS   ROLES    AGE    VERSION
+ip-10-0-1-28.ap-south-1.compute.internal   Ready    <none>   107m   v1.30.8-eks-aeac579
+ip-10-0-2-63.ap-south-1.compute.internal   Ready    <none>   107m   v1.30.8-eks-aeac579
+```
+
+This is the process to connect kubectl to EKS cluster
+
+
+
+
+
 
 
 
