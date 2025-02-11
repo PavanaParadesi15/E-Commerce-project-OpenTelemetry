@@ -51,6 +51,18 @@ ip-10-0-2-63.ap-south-1.compute.internal   Ready    <none>   107m   v1.30.8-eks-
 This is the process to connect kubectl to EKS cluster
 
 
+# What are the K8S tasks I would perform for this project Implementation
+
+1. What is Service Account and why we need service account?
+2. Deployment of pods
+3. Service discovery
+4. How to deploy this project / micro services on to EKS cluster.
+5. How to expose this application to external users using Load Balancer service type. 
+6. Difference between LB service type and Ingress.
+7. Deploy Ingress, Ingress controller and access the application from web. 
+8. How to get a custom domain?
+9. How to integrate this domain with Ingress using AWS Route53. 
+10. How to access application using this domain
 
 
 
