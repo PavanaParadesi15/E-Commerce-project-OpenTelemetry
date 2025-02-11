@@ -11,7 +11,7 @@ It solves the critical problem in the world of containers called **"Service Disc
 - Unlike Containers, Deployment service which is created by writing deployment.yml, solves only auto scaling healing problem of pods/containers. 
 - So even after using deployment service and the Replica set created by deployment, whenever a pod goes down, replica set automatically spins up the new pod, always maintaining the count of the pods we specified in the deployment.yml file. There is no manual intervention in this senario. 
 - But, Even in this case, the new pod which spins up , its IP address can be changed and users cannot access the microservice deployed on this pod. 
-- So to solve this issue, comes the "service"/ "Service discovery". 
+- So to solve this issue, comes the **"Service"/ "Service discovery"**. 
 - Service Discovery communicates / identifies the pods based on "Label and Selectors" concept not on the IP address of it. Even when the pod goes down and comes up automatically with the help of replica set and deployment and the IP address of it is changed, Service can identify/recognize the pod using its "**Label**".
 - Everytime Service can identify the Pod using its Labels and Selectors. 
 - Using service, Users can access a pod, using domain name of the service. Service communicates with the pod using labels & Selectors.
