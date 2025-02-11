@@ -83,6 +83,63 @@ kubectl get svc               // displays the services created for all the micro
 - Using LB Endpoint, external users can access the application / microservice
 
 
+## Changing service type to LoadBalancer
+
+Edit the Frontend-proxy microservice, service type to Load Balancer
+
+```
+kubectl edit svc opentelemetry-demo-frontendproxy
+kubectl get svc opentelemetry-demo-frontendproxy
+```
+
+- This will update the service type to LoadBalancer in Front-end proxy microservice. 
+- A load balancer is created, using which we can access the application from Internet. 
+- Copy the DNS name of LB,
+- <LB DNS name>:8080  , hit this url , application can be accessed
+
+### Flow:
+
+**Service type changed to LoadBalancer ---> API Server takes this instruction ---> passes this info to Cloud Controller Manager(CCM) ---> communicated to AWS cloud(as EKS Cluster is in AWS cloud) ----> creates a Load Balancer ---> access the application through LB.**
+
+
+## Disadvantages of LoadBalancer approach.
+
+**1. Not declarative Approach:**
+- In the above approach, LB is not configured declaratively. 
+- Any updates to LB , Has to be done through LB UI. cannot be done through K8s service manifests.
+- LB is created as http by default. If we want to change it to "https" , we have to update TLS certificates manually through LoadBalancer UI. 
+
+**2. LB is cost in-effective:**
+- LB approach is costly. Cost ineffectives.
+
+**3. Lack of flexibility:**
+- Tied to only ALB - Application LB, Cannot use other LBs like F5, NGINX LB etc. Lack of flexibility.
+
+4. Dependent on CCM 
+
+
+## Alternative to LB approach - Ingress Resource
+
+**1. Ingress is declarative**. 
+- We can modify "ingress.yaml" declaratively , change LB to HTTPS , we can modify many parameters of the LB, using Labels and annotations in ingress.yml
+
+**2. Cost Effective:**
+- Only create 1 LB, using Path and host, we can create target groups for all the microservices. 
+- So only one LB can route traffic to many microservices, using host based routing and path based routing. 
+
+**3. Ingress is Flexible.** 
+- we can create multiple ingress controllers for each type of Load balancer like ALB, F5, NGINX etc. 
+
+**4. Ingress is not dependent on CCM - Cloud controller manager.** 
+- Without CCM, ingress can create LB
+
+
+
+
+
+
+
+
 
 
 
