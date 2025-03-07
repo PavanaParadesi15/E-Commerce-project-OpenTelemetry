@@ -7,7 +7,7 @@ cluster_version     = "1.32"
 
 node_groups = {
   workers = {
-    instance_type    = ["t3.medium", "t3.large"]
+    instance_types    = ["t3.medium", "t3.large"]
     capacity_type  = "ON_DEMAND"
     scaling_config = {
       desired_size = 2
