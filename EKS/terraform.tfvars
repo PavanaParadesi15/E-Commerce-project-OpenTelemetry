@@ -1,0 +1,6 @@
+aws_region          = "us-east-1"
+bucket_name         = "terraform-eks-statefile-bucket-pavana"
+state_file_name      = "terraform.tfstate"
+dynamodb_name       = "terraform-eks-statefile-locks"
+// billing_mode        = "PAY_PER_REQUEST"
+// hash_key            = "LockId"

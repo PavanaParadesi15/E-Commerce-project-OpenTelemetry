@@ -12,9 +12,11 @@ variable "dynamodb_name" {
 variable "billing_mode" {
   description = "The mode of the billing"
   type = string
+  default = "PAY_PER_REQUEST"
 }
 
 variable "hash_key" {
   description = "The hash key of the dynamodb"
   type = string
+  default = "LockId"
 }
