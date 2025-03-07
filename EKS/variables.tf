@@ -44,11 +44,6 @@ variable "public_subnet_cidrs" {
   type        = list(string)
 }
 
-variable "cluster_name" {
-  description = "Name of the EKS cluster"
-  type        = string
-}
-
 
 ##############
 ## EKS Variables
