@@ -48,7 +48,7 @@ kubectl get svc               // displays the services created for all the micro
 
 - If we try to access the front end we cannot access it using clusterIP and the port 8080. Because, EKS cluster is inside the VPC . 
 - The nodes of EKS cluster are only connected to private subnet. 
-- There is public subnet, where there is Internet Gateway 
+- There is public subnet, where there is Internet Gateway. But how will the services within EKS get access to public subnet, so users can access it from outside world. There comes the Service types. 
 
 # Service types
 
