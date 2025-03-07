@@ -18,5 +18,5 @@ variable "billing_mode" {
 variable "hash_key" {
   description = "The hash key of the dynamodb"
   type = string
-  default = "LockId"
+  //default = "LockID"
 }
