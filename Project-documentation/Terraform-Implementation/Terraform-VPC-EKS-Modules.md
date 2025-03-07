@@ -16,7 +16,7 @@ Modules are the re-usable code.
 
 - For EKS cluster, we need 2 IAM roles , one for cluster (control plane) and one for nodes (data plane)
 
-**For Control plane**
+**For Control plane** - Master
 - Create IAM role for cluster
 - Create and Associate policy to this IAM role with necessary permissions
 - Create EKS Cluster. Control plane is created. 
