@@ -1,24 +1,3 @@
-variable "aws_region" {
-  description = "aws region"
-  type        = string
-}
-
-
-variable "bucket_name" {
-  description = "The name of the bucket"
-  type        = string
-}
-
-variable "state_file_name" {
-  description = "state file name"
-  type        = string
-}
-
-variable "dynamodb_name" {
-  description = "The name of the DynamoDB database"
-  type = string
-}
-
 
 ################
 ## VPC Variables

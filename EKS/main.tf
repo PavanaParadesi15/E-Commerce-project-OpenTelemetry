@@ -1,10 +1,10 @@
 ## Backend configuration - Using remote backend which is S3 bucket created for storing state file
 terraform {
   backend "s3" {
-    bucket         = var.bucket_name
-    key            = var.state_file_name
-    region         = var.region_name
-    dynamodb_table = var.dynamodb_name
+    bucket         = "terraform-eks-statefile-bucket-pavana"
+    key            = "terraform.tfstate"
+    region         = "us-east-1"
+    dynamodb_table = "terraform-eks-statefile-locks"
     encrypt        = true
   }
 }
