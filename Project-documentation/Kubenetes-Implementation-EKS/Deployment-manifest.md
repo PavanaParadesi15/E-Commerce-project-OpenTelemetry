@@ -30,10 +30,11 @@ K8s has different types of services like Deployment, Service, ingress, config ma
 - So in the deployment.yaml file, there is 
 - **apiVersion, kind, metadata** (within metadata there is name of **microservice and labels**). 
 - After metadata, There is **spec** (within spec, **there is replicas and labels and selectors**)
-- **Within spec** there is **template which has pod configuration**. we define **metadata in template for service identification**. 
+- **Within spec** there is **template which has pod configuration**. we define **metadata in template for service discovery**. 
 - In the spec, **inside template**, we **define service account name , and containers configuration**.
-- Container configuration has name of container, image for the microservice to run on this container, ports container runs, environment variables and volume information. 
-
+- Container configuration has name of container, image for the microservice to run on this container, ports container runs, environment variables and volume information.
+- The labels in the deployment are not important for Service Discovery. The labels of the POD play critical role in service discovery.
+- Deployment only creates important controller called "Replica Set" which creates the pods.
 
 
 

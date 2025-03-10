@@ -5,7 +5,7 @@ Service manifests starts with
 ```
 - **apiVersion:**v1
   **kind:** Service
- ** metadata:**
+ ** metadata:**  - For identification on service
     **name:** name of the service 
     **labels:** provide labels for this service
   **spec:** It is important part of service
@@ -22,7 +22,7 @@ Service manifests starts with
 - **LoadBalancer type service** - used for the external traffic to connect to service. for external access.
 - **Selectors** - service identifies pod using its labels, but for the service to know which label it should look for, In the service.yaml we specify a field called Selector in which we give the same label name which is specified in pod deployment.yaml configuration template.
 - So for the service using the information provided in selector, it knows which label it should look for the pod and identify. 
-
+- FQDN - Fully Qualified Domain Name  . FQDN:Port
 
 
 
