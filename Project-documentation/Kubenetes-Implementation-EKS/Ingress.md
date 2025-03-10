@@ -13,7 +13,9 @@
 ### Ingress.yaml
 
 apiVersion:
+
 kind:
+
 metadata:
   name: 
   annatotations:
