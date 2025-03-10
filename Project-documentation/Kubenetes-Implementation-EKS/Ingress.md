@@ -12,31 +12,6 @@
 
 ### Ingress.yaml
 
-apiVersion:
-
-kind:
-
-metadata:
-
-  name: 
-  
-  annatotations:
-  
-spec: 
-
-  rules:
-  
-    host:
-    
-    http:
-    
-      path:
-      
-      backend:
-      
-        service: 
-
-
 - Ingress resource is tied to the service. we should definitely provide the service
 - We create Ingress resource for only services that needs internet access/external access. Not for all microservices.
 - In this case we create Ingress.yaml for only "Frontend Proxy" which needs external access.  along with deployment and service.yaml. 
@@ -51,6 +26,62 @@ spec:
 - Ingress controller by default watches the Ingress resource (ingress.yaml) then it will create LB according to the resource.
 - I am deploying ALB LB for the frontend proxy, for that I am deploying ALB controller and a ingress resource for the frontend proxy service. 
  
+
+## Ingress.yaml
+
+apiVersion: networking.k8s.io/v1\
+kind: Ingress\
+metadata:\
+  name: frontend-proxy\
+  annotations:\
+    alb.ingress.kubernetes.io/scheme: internet-facing\
+    alb.ingress.kubernetes.io/target-type: ip\
+spec:\
+  ingressClassName: alb\
+  rules:\
+    - host: example.com\
+      http:\
+        paths:\
+          - path: "/"\
+            pathType: Prefix\
+            backend:\
+              service:\
+                name: opentelemetry-demo-frontendproxy\
+                port:\
+                  number: 8080\
+
+
+- Path based  routing
+- port : 8080 is the port of frontend proxy, the service port. 
+- Specify annotations
+
+#### Commands to create ingress and check the status
+
+```
+kubectl apply -f ingress.yaml
+kubectl get ing
+```
+
+```
+kubectl get pods -n kube-system                            // to see the alb pods
+```
+
+
+
+## To access the application with the Domain name 
+
+- Buy a domain name from GoDaddy, create route53 in AWS with the domain name and get the nameservers for it.
+- Update these nameserves in the GoDaddy. Update can take upto 6hrs to get reflected. 
+- Update the host name in the ingress.yaml for frontend proxy, to the domain name we bought. 
+- Now can access the application on this hostname/domain name.
+
+
+
+
+
+
+
+
 
 
 
