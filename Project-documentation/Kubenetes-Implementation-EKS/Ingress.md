@@ -17,14 +17,23 @@ apiVersion:
 kind:
 
 metadata:
+
   name: 
+  
   annatotations:
+  
 spec: 
+
   rules:
+  
     host:
+    
     http:
+    
       path:
+      
       backend:
+      
         service: 
 
 
