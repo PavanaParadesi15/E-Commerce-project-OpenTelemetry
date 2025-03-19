@@ -7,7 +7,53 @@
 
 
 - Check the ci.yaml file in .github\workflows 
-- There are 4 stages - build, code quality, docker image push , Update K8S manifest (deploy.yaml) for product catalog.
+- There are 4 stages - Code checkout, build & Test, code quality (Static Code Analysis), Docker login and Docker image push , Update K8S manifest (deploy.yaml) for product catalog.
+
+- Github has Actions which are like plugins in github, where Actions are like Checkout - responsible for cloning the repo. 
+- For docker github has actions like login action, push action, build action.
+- We write all these actions in github actions-ci.yaml
+
+- We provide the build trigger for the ci.yaml , means when should this GITHUB workflow should trigger. On pull request, or developer pushes the code. 
+- We can categorize the jobs into different steps like build, test, code quality, docker image, update k8s. 
+- These jobs runs on the github provided runners. Runners are like nodes as in Jenkins. These are  github hosted runners. 
+- There are self-hosted runners as well. 
+
+
+## Explaining CI file
+- runs-on : To specify which runner that particular job has to run on. Like "ubuntu-latest"
+```  
+- name: checkout code
+          uses: actions/checkout@v4
+```
+
+- Define actions "checkout" . Go to github actions documentation to find what action to use and its version.
+- Define runner for each job we define in yaml file. Runner is the virtual machine provided by github.
+
+```
+- name: Run golangci-lint
+  uses: golangci/golangci-lint-action@v6
+  with:
+    version: v1.55.2
+    run: golangci-lint run
+    working-directory: src/product-catalog
+```
+
+- This step uses the pre-built GitHub Action for GolangCI-Lint.
+- The command golangci-lint run, which analyzes Go code for linting errors.
+- It downloads and installs GolangCI-Lint (version v1.55.2).
+- It flags errors, warnings, and style issues according to Golang best practices.
+
+```
+   docker:
+        runs-on: ubuntu-latest
+
+        needs: build
+```
+
+- "needs" block is like depends_on block in Terraform. 
+
+
+
 
 
 ## CD Part
