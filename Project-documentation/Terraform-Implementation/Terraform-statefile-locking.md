@@ -15,3 +15,7 @@ When multiple users or processes run Terraform at the same time, several issues 
 5. **Cost Efficiency**: With `PAY_PER_REQUEST` billing, DynamoDB incurs minimal cost for Terraform state locking.
 
 
+### Command to remove the State Lock
+```
+terraform force-unlock <LockID>
+```
